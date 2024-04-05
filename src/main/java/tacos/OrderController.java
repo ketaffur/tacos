@@ -16,6 +16,12 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/orders")
 @SessionAttributes("tacoOrder")
 public class OrderController {
+	private OrderRepository orderRepository;
+	
+	public OrderController(OrderRepository orderRepository) {
+		this.orderRepository = orderRepository;
+	}
+	
 	@GetMapping("/current")
 	public String orderForm() {
 		return "orderForm";
@@ -26,6 +32,8 @@ public class OrderController {
 		if (errors.hasErrors()) {
 			return "orderForm";
 		}
+		
+		orderRepository.save(order);
 		
 		log.info("Order submitted: {}", order);
 		sessionStatus.setComplete();
