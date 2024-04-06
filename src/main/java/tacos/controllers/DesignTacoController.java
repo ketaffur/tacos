@@ -18,7 +18,7 @@ import tacos.models.Ingredient;
 import tacos.models.Taco;
 import tacos.models.TacoOrder;
 import tacos.models.Ingredient.Type;
-import tacos.repositories.IngredientRepository;
+import tacos.springdata.jdbc.IngredientRepository;
 
 @Slf4j
 @Controller
