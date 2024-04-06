@@ -1,4 +1,4 @@
-package tacos;
+package tacos.controllers;
 
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -14,7 +14,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import tacos.Ingredient.Type;
+import tacos.models.Ingredient;
+import tacos.models.Taco;
+import tacos.models.TacoOrder;
+import tacos.models.Ingredient.Type;
+import tacos.repositories.IngredientRepository;
 
 @Slf4j
 @Controller

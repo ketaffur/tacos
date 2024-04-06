@@ -1,6 +1,8 @@
-package tacos;
+package tacos.repositories;
 
 import java.util.Optional;
+
+import tacos.models.Ingredient;
 
 public interface IngredientRepository {
 	Iterable<Ingredient> findAll();

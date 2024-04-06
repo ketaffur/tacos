@@ -1,4 +1,4 @@
-package tacos;
+package tacos.models;
 
 import lombok.Data;
 
