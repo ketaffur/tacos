@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tacos.models.IngredientRef;
 import tacos.models.Taco;
 import tacos.models.TacoOrder;
-import tacos.repositories.OrderRepository;
+import tacos.repositories.JdbcTemplateOrderRepository;
 
 @Repository
-public class JdbcOrderRepository implements OrderRepository {
+public class JdbcOrderRepository implements JdbcTemplateOrderRepository {
 	private JdbcOperations jdbcOperations;
 	
 	public JdbcOrderRepository(JdbcOperations jdbcOperations) {
@@ -94,7 +94,7 @@ public class JdbcOrderRepository implements OrderRepository {
 		
 		taco.setId(orderId);
 		
-		saveIngredientRefs(tacoId, taco.getIngredients());
+//		saveIngredientRefs(tacoId, taco.getIngredients()); // taco entity now stores a list of ingredients, that way it works with spring data jpa
 		
 		return tacoId;
 	}

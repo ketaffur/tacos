@@ -9,10 +9,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import tacos.models.Ingredient;
-import tacos.repositories.IngredientRepository;
+import tacos.repositories.JdbcTemplateIngredientRepository;
 
 @Repository
-public class JdbcIngredientRepository implements IngredientRepository {
+public class JdbcIngredientRepository implements JdbcTemplateIngredientRepository {
 	private JdbcTemplate jdbcTemplate;
 	
 	public JdbcIngredientRepository(JdbcTemplate jdbcTemplate) {

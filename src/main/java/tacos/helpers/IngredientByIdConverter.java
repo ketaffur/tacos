@@ -4,13 +4,13 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import tacos.models.Ingredient;
-import tacos.repositories.IngredientRepository;
+import tacos.repositories.JdbcTemplateIngredientRepository;
 
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
-	private IngredientRepository ingredientRepository;
+	private JdbcTemplateIngredientRepository ingredientRepository;
 	
-	public IngredientByIdConverter(IngredientRepository ingredientRepository) {
+	public IngredientByIdConverter(JdbcTemplateIngredientRepository ingredientRepository) {
 		this.ingredientRepository = ingredientRepository;
 	}
 
